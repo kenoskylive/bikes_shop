@@ -1,0 +1,13 @@
+%h1= @rental.name
+
+%p= @rental.manufacturer
+%p= number_to_currency @rental.price, :unit => "€"
+%p= image_tag @rental.image
+%p= @rental.description
+
+%p=link_to "Add to cart", add_cart_path, method: :post, class: "btn btn-primary"
+
+%p
+  = link_to 'Edit', edit_rental_path(@rental)
+  \|
+  = link_to 'Back', rentals_path

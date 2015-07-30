@@ -1,0 +1,9 @@
+-if @booking_form.has_errors?
+ .panel.panel-dander
+  .panel-heading
+   %h4.panel-title we have found some problems with your details. please review them.
+  .panel-body
+   -@booking_form.user.errors.full_messages.each do |error|
+    %p
+     %strong User:
+     =error

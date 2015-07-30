@@ -1,0 +1,24 @@
+%h1 Our Bikes
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Manufacturer
+      %th Price
+      %th Image
+      %th Description
+      %th
+
+  - @rentals.each do |rental|
+    %tr
+      %td= link_to rental.name, rental
+      %td= rental.manufacturer
+      %td= number_to_currency rental.price, :unit => "€"
+      %td= image_tag rental.image.thumb
+      %td= rental.description
+      %td
+      = link_to 'Edit', edit_rental_path(rental)
+      = link_to 'Destroy', rental, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%p= link_to 'New Rental', new_rental_path, class: "btn btn-primary"
