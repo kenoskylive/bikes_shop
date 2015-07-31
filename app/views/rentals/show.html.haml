@@ -8,6 +8,6 @@
 %p=link_to "Add to cart", add_cart_path, method: :post, class: "btn btn-primary"
 
 %p
-  = link_to 'Edit', edit_rental_path(@rental)
+  = link_to 'Edit', edit_rental_path(@rental), class: "btn btn-primary"
   \|
-  = link_to 'Back', rentals_path
+  = link_to 'Back', rentals_path, class: "btn btn-primary"

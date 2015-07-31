@@ -34,7 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.default_url_options = { :host => 'app_url' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -42,9 +42,9 @@ Rails.application.configure do
   :address              => 'smtp.gmail.com',
   :port                 => 587,
   :domain               => 'gmail.com',
-  :user_name            => 'kenosque@gmail.com',
+  :user_name            => 'kenosque.com',
   :password             => 'pass',
   :authentication       => 'plain',
-  #:enable_starttls_auto => true
+  :enable_starttls_auto => true
   }
 end

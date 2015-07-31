@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :rentals
+  resources :searches
 
   resource :cart, only:[ :show ] do
     post "add", path: "add/:id"

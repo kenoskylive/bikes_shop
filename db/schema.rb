@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729161817) do
+ActiveRecord::Schema.define(version: 20150731192949) do
 
   create_table "booking_items", force: true do |t|
     t.integer  "booking_id"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20150729161817) do
     t.float    "price"
     t.string   "image"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", force: true do |t|
+    t.string   "keywords"
+    t.integer  "category_id"
+    t.decimal  "min_price"
+    t.decimal  "max_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
