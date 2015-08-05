@@ -1,0 +1,31 @@
+%p#notice= notice
+
+%p
+  %b Bike name:
+  = @bike.bike_name
+%p
+  %b Price per day:
+  = @bike.price_per_day
+%p
+  %b Price per week:
+  = @bike.price_per_week
+%p
+  %b Description:
+  = @bike.descrition
+
+%h2 Listing rent_requests
+
+- @bike.rent_requests.each do |rent_request|
+  %tr
+    %td= rent_request.name
+    %td= rent_request.email
+    %td= rent_request.rent_type
+    %td= rent_request.rent_duration
+    %td= rent_request.bike
+    %td
+
+= link_to 'Show', bike_rent_requests_path(@bike)
+
+= link_to 'Edit', edit_bike_path(@bike)
+\|
+= link_to 'Back', bikes_path

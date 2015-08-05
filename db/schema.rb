@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731192949) do
+ActiveRecord::Schema.define(version: 20150805111605) do
+
+  create_table "bikes", force: true do |t|
+    t.string   "bike_name"
+    t.float    "price_per_day"
+    t.float    "price_per_week"
+    t.text     "descrition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "booking_items", force: true do |t|
     t.integer  "booking_id"
@@ -31,6 +40,18 @@ ActiveRecord::Schema.define(version: 20150731192949) do
   end
 
   add_index "bookings", ["user_id"], name: "index_bookings_on_user_id"
+
+  create_table "rent_requests", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "rent_type"
+    t.integer  "rent_duration"
+    t.integer  "bike_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rent_requests", ["bike_id"], name: "index_rent_requests_on_bike_id"
 
   create_table "rentals", force: true do |t|
     t.string   "name"

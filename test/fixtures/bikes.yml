@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bike_name: MyString
+  price_per_day: 1.5
+  price_per_week: 1.5
+  descrition: MyText
+
+two:
+  bike_name: MyString
+  price_per_day: 1.5
+  price_per_week: 1.5
+  descrition: MyText

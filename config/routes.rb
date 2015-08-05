@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  resources :bikes do
+    resources :rent_requests
+  end
+
   devise_for :users
   resources :rentals
   resources :searches

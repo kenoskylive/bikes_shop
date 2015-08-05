@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  rent_type: MyString
+  rent_duration: 1
+  bike_id: 
+
+two:
+  name: MyString
+  email: MyString
+  rent_type: MyString
+  rent_duration: 1
+  bike_id: 

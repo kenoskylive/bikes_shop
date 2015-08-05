@@ -1,0 +1,12 @@
+= simple_form_for, @bike @rent_request do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :email
+    = f.input :rent_type
+    = f.input :rent_duration
+    = f.association :bike
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,11 @@
+= simple_form_for(@bike) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :bike_name
+    = f.input :price_per_day
+    = f.input :price_per_week
+    = f.input :descrition
+
+  .form-actions
+    = f.button :submit

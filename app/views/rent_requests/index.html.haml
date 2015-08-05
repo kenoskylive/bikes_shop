@@ -1,0 +1,32 @@
+%h1 Listing rent requests 
+
+= @bike.bike_name
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Rent type
+      %th Rent duration
+      %th Bike
+      %th
+      %th
+      %th
+
+  %tbody
+    - @rent_requests.each do |rent_request|
+      %tr
+        %td= rent_request.name
+        %td= rent_request.email
+        %td= rent_request.rent_type
+        %td= rent_request.rent_duration
+        %td= rent_request.bike
+        %td= link_to 'Show', bike_rent_request_path(@bike, rent_request)
+        %td= link_to 'Edit', edit_bike_rent_request_path(@bike, rent_request)
+        %td= link_to 'Destroy', bike_rent_request_path(@bike, rent_request), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Rent request', new_bike_rent_request_path(@bike)
+= link_to 'Back to Bike', @bike

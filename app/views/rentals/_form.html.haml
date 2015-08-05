@@ -21,5 +21,22 @@
   .field
     = f.label :description
     = f.text_field :description
+  .field
+    = f.label :Safety_Tools
+    %p= check_box_tag 'bike_hire[safety_tools]','safety_tools'
+    = f.label :Extra_Tube
+    %p= check_box_tag 'bike_hire[Extra_Tube]','Extra_Tubes'
+    = f.label :cycling_gloves
+    %p= check_box_tag 'bike_hire[cycling_gloves]','cycling_gloves'
+    / a select element
+    = f.label :Color_Preference
+    %select#color
+      - ['red', 'blue', 'yellow', 'green'].each do |i|
+        %option{:value => i}= i
+
+    %p= f.label :Daily_Hire
+    %p= check_box_tag 'bike_hire[Daily_Hire]','Daily_Hire'
+    = f.label :Weekly_Hire
+    %p= check_box_tag 'bike_hire[Weekly_Hire]','Weekly_Hire'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn-primary"

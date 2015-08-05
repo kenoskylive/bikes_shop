@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%h1 Rent Request:
+= @bike.bike_name
+
+
+%p
+  %b Name:
+  = @rent_request.name
+%p
+  %b Email:
+  = @rent_request.email
+%p
+  %b Rent type:
+  = @rent_request.rent_type
+%p
+  %b Rent duration:
+  = @rent_request.rent_duration
+%p
+  %b Bike:
+  = @rent_request.bike
+
+= link_to 'Edit', edit_bike_rent_request_path(@bike, @rent_request)
+\|
+= link_to 'Back', bike_rent_requests_path(@bike)

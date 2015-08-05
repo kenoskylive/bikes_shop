@@ -1,0 +1,27 @@
+%h1 Listing bikes
+
+%table
+  %thead
+    %tr
+      %th Bike name
+      %th Price per day
+      %th Price per week
+      %th Descrition
+      %th
+      %th
+      %th
+
+  %tbody
+    - @bikes.each do |bike|
+      %tr
+        %td= bike.bike_name
+        %td= bike.price_per_day
+        %td= bike.price_per_week
+        %td= bike.descrition
+        %td= link_to 'Show', bike
+        %td= link_to 'Edit', edit_bike_path(bike)
+        %td= link_to 'Destroy', bike, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Bike', new_bike_path
