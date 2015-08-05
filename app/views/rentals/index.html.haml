@@ -19,6 +19,7 @@
       %td= number_to_currency rental.price, :unit => "€"
       %td= image_tag rental.image.thumb
       %td= rental.description
+    -if current_user.admin?
       %td
       = link_to 'Edit', edit_rental_path(rental)
       = link_to 'Destroy', rental, :method => :delete, :data => { :confirm => 'Are you sure?' }

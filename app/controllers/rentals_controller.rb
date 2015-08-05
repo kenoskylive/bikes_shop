@@ -1,8 +1,10 @@
 require 'my_logger'
 require 'rental_decorator'
 class RentalsController < ApplicationController
-  before_action :set_rental, only: [:show, :edit, :update, :destroy]
+  #before_action :set_rental, only: [:show, :edit, :update, :destroy]
   before_filter :initialize_cart
+  before_filter :authenticate_user!
+  before_filter :ensure_admin, :only => [:edit, :destroy]
 
   respond_to :html
 
@@ -12,7 +14,7 @@ class RentalsController < ApplicationController
   end
 
   def show
-    respond_with(@rental)
+    respond_with(@rentals)
   end
 
   def new
@@ -31,7 +33,7 @@ class RentalsController < ApplicationController
     #@rental.description = params[:rental][:description]
    
     # create an instance of a BasicBike
-    myRental = BasicRenatal.new(20, @rental.manufacturer,@rental.name, @rental.image) 
+    myRental = BasicRental.new(20, @rental.manufacturer,@rental.name, @rental.image) 
     
     #add the extra features to the new rental
     if params[:rental][:Safety_Tools].to_s.length > 0 then
@@ -89,6 +91,13 @@ class RentalsController < ApplicationController
     @rental.destroy
     respond_with(@rental)
   end
+
+  def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized
+    end
+  end
+
 
   private
     def set_rental
