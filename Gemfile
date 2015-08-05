@@ -27,12 +27,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # New gems
-
+gem "simple_form"
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'haml-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'image_magick'
+gem 'imagemagick-binaries'
 #Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications.
 gem 'puma'
 gem 'devise'

@@ -3,13 +3,15 @@
 %table.table.table-hover
   %thead
     %tr
-      %th Quantity
+      %th Duration
       %th Rental
       %th Price
       
   - @cart.items.each do |item|
     %tr
-      %td=item.quantity
+      %td
+        =item.quantity
+        = select(:rental, :status, options_for_select([["number of days", "1"], ["pending", "2"], ["success", "3"]]))
       %td
         =image_tag item.rental.image.thumb
         =link_to item.rental.name, item.rental

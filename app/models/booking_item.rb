@@ -5,4 +5,8 @@ class BookingItem < ActiveRecord::Base
   def total_price
   	self.quantity * self.rental.price
   end
+
+  def total_price_per_day
+    (price  + extraperson + ((rate + extraperson) * tax/100).to_i ) 
+  end
 end
